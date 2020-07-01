@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @SpringBootApplication
 @RestController
 public class ApplicationMercado {
@@ -32,7 +33,7 @@ public class ApplicationMercado {
              List<Cliente> todos_cli = clientes.obterTodos();
              todos_cli.forEach(System.out::println);
 
-              /*
+
              //Atualizar todos os clientes/
              todos_cli.forEach(cliente -> {
                  cliente.setNome(cliente.getNome()+"Atualiza");
@@ -46,7 +47,7 @@ public class ApplicationMercado {
 
              //Buscar por Nome do cliente/
              System.out.println("Buscar pelo nome");
-             todos_cli =  clientes.buscarPorNome("al");
+             todos_cli =  clientes.buscarPorNome("a");
              todos_cli.forEach(cli -> System.out.println(cli));
             //---------------------------------------------------------
 
@@ -68,7 +69,7 @@ public class ApplicationMercado {
                   todos_cli.forEach(cli -> System.out.println(cli+"Remove"));
               }
               //---------------------------------
-                     */
+
          };
 
      }
