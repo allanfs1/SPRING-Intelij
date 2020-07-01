@@ -25,32 +25,33 @@ public class ApplicationMercado {
      public CommandLineRunner init(@Autowired Clientes clientes){
          return args -> {
              /*Ciar clientes*/
-             clientes.salvar(new Cliente("Allan Ferreira de Souza"));
-             clientes.salvar(new Cliente("Eduardo do Satos Pereira"));
+             clientes.salvar(new Cliente("Allan Ferreira de Souza "));
+             clientes.salvar(new Cliente("Eduardo do Santos Pereira SoMoza"));
 
              /*Listar Todos os clientes*/
              List<Cliente> todos_cli = clientes.obterTodos();
              todos_cli.forEach(System.out::println);
 
-             /*Atualizar todos os clientes*/
+              /*
+             //Atualizar todos os clientes/
              todos_cli.forEach(cliente -> {
                  cliente.setNome(cliente.getNome()+"Atualiza");
                  clientes.atualizar(cliente);
 
              });
 
-             /*Listar Todos os clientes*/
+             //Listar Todos os clientes/
              todos_cli = clientes.obterTodos();
              todos_cli.forEach(cli -> System.out.println(cli));
 
-             /*Buscar por Nome do cliente*/
+             //Buscar por Nome do cliente/
              System.out.println("Buscar pelo nome");
              todos_cli =  clientes.buscarPorNome("al");
              todos_cli.forEach(cli -> System.out.println(cli));
             //---------------------------------------------------------
 
 
-             /*Deletar usuario*/
+             //Deletar usuario/
              System.out.println("Deletando cliente");
               todos_cli.forEach(cliente ->{
                   clientes.deletar(cliente);
@@ -67,7 +68,7 @@ public class ApplicationMercado {
                   todos_cli.forEach(cli -> System.out.println(cli+"Remove"));
               }
               //---------------------------------
-
+                     */
          };
 
      }

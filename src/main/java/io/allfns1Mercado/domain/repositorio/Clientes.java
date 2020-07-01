@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -22,6 +24,8 @@ public class Clientes {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    private EntityManager entityManager;
 
     public Cliente atualizar(Cliente cliente){
         this.jdbcTemplate.update(UPDATE,new Object[]{cliente.getNome(),cliente.getId()});
@@ -37,9 +41,9 @@ public class Clientes {
         jdbcTemplate.update(DELETE, new Object[]{id});
     }
 
-
+    @Transactional
     public Cliente salvar (Cliente cliente){
-        jdbcTemplate.update(INSERT,new Object[] { cliente.getNome() } );
+        entityManager.persist(cliente);
         return cliente;
     }
 
