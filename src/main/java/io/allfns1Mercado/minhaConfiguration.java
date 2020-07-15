@@ -1,9 +1,7 @@
 package io.allfns1Mercado;
 
 
-import io.allfns1Mercado.repository.ClienteRepository;
-import io.allfns1Mercado.service.MercadoService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
