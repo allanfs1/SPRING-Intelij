@@ -1,9 +1,19 @@
 package io.allfns1Mercado.domain.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 
 
 @Entity
@@ -31,7 +41,6 @@ public class Pedido {
 
 
 
-
     public List<ItemPedido> getItens() {
         return itens;
     }
@@ -40,44 +49,17 @@ public class Pedido {
         this.itens = itens;
     }
 
-    public Integer getId() {
-        return id;
+
+
+    public List<ItemPedido> getItemsList(){
+        if(this.itens == null){
+            return  this.itens = new ArrayList<>();
+        }
+
+          return  this.itens;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
 
-    public BigDecimal getTotal() {
-        return total;
-    }
-
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
-
-    public LocalDate getDataPedido() {
-        return dataPedido;
-    }
-
-    public void setDataPedido(LocalDate dataPedido) {
-        this.dataPedido = dataPedido;
-    }
-
-    @Override
-    public String toString() {
-        return "Pedido{" +
-                "id=" + id +
-                ", cliente=" + cliente +
-                ", dataPedido=" + dataPedido +
-                '}';
-    }
 }

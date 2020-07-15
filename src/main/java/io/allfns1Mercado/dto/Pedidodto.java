@@ -2,6 +2,10 @@ package io.allfns1Mercado.dto;
 
 
 import io.allfns1Mercado.domain.entity.ItemPedido;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -21,6 +25,10 @@ import java.util.List;
 
 
 **/
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 
 public class Pedidodto {
 
