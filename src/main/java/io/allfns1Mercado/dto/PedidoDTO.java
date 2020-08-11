@@ -30,11 +30,11 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 
-public class Pedidodto {
+public class PedidoDTO {
 
     private Integer cliente;
     private BigDecimal total;
-    private List<ItemPedido> items;
+    private List<itemsPedidoDTO> items;
 
 
 }
